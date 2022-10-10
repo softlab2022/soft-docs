@@ -46,7 +46,7 @@
                 color: #5C637E;
                 border-radius: 0;
                 text-transform: capitalize;
-                border-left: 1px solid #000;
+                border-left: 1px solid #5c637e;
                 &:focus {
                     box-shadow: none;
                 }
@@ -74,7 +74,7 @@
        }
    }
    .form form input::placeholder {
-       color: rgb(43, 43, 43);
+       color: #979797;
        font-weight: 400;
        font-size: 18px;
        line-height: 150%;
@@ -120,7 +120,7 @@
                 text-decoration: none;
                 display: flex;
                 align-items: center;
-                color: #151826;
+                color: #5C637E;
                 font-size: 16px;
                 font-weight: 400;
                 margin-bottom: 10px;

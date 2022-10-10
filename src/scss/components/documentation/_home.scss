@@ -48,7 +48,7 @@ body.page {
                 color: #5C637E;
                 border-radius: 0;
                 text-transform: capitalize;
-                border-left: 1px solid #000;
+                border-left: 1px solid #5c637e;
                 &:focus {
                     box-shadow: none;
                 }
@@ -75,7 +75,7 @@ body.page {
         }
     }
     .form form input::placeholder {
-        color: rgb(43, 43, 43);
+        color: #979797;
         font-weight: 400;
         font-size: 18px;
         line-height: 150%;
@@ -86,7 +86,7 @@ body.page {
             background-color: #fff;
             border: 1px solid #3b3f5321;
             width: 312px;
-            height: 480px;
+            height: 530px;
             border-radius: 20px;
             float: left;
             .item-head {
@@ -94,7 +94,7 @@ body.page {
                     border-bottom: 2px solid #727BFF;
                     padding: 20px;
                     a {
-                        color: #000;
+                        color: #5c637e;
                         font-size: 16px;
                         font-weight: 600;
                         img {
@@ -121,26 +121,35 @@ body.page {
                     text-decoration: none;
                     display: flex;
                     align-items: center;
-                    color: #151826;
+                    color: #5c637e;
                     font-size: 16px;
                     font-weight: 400;
-                    margin-bottom: 10px;
+                    margin-bottom: 22px;
                     img {
                         padding-right: 10px;
                     }
                 }
             }
             .docs-butt  {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 a {
                     text-decoration: none;
-                    color: #151826;
+                    color: #727BFF;
                     font-size: 18px;
                     font-weight: 600;
                     text-align: center;
                     display: block;
-                    padding-bottom: 25px;
+                    border: 1px solid #E5EDFF;
+                    border-radius: 10px;
+                    padding: 10px 25px;
+                    width: max-content;
+                    transition: all linear .3s;
                     &:hover {
-                        color: #727BFF;
+                        color: #fff;
+                        background-color: #4353FF;
+                        transition: all linear .3s;
                     }
                 }
             }
@@ -149,7 +158,7 @@ body.page {
             background-color: #fff;
             border: 1px solid #3b3f5321;
             width: 312px;
-            height: 480px;
+            height: 530px;
             border-radius: 20px;
             float: left;
             margin:0 20px;
@@ -158,7 +167,7 @@ body.page {
                     border-bottom: 2px solid #00BB45;
                     padding: 20px;
                     a {
-                        color: #000;
+                        color: #5c637e;
                         font-size: 16px;
                         font-weight: 600;
                         img {
@@ -185,26 +194,35 @@ body.page {
                     text-decoration: none;
                     display: flex;
                     align-items: center;
-                    color: #151826;
+                    color: #5c637e;
                     font-size: 16px;
                     font-weight: 400;
-                    margin-bottom: 10px;
+                    margin-bottom: 22px;
                     img {
                         padding-right: 10px;
                     }
                 }
             }
             .docs-butt  {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 a {
                     text-decoration: none;
-                    color: #151826;
+                    color: #727BFF;
                     font-size: 18px;
                     font-weight: 600;
                     text-align: center;
                     display: block;
-                    padding-bottom: 25px;
+                    border: 1px solid #E5EDFF;
+                    border-radius: 10px;
+                    padding: 10px 25px;
+                    width: max-content;
+                    transition: all linear .3s;
                     &:hover {
-                        color: #727BFF;
+                        color: #fff;
+                        background-color: #4353FF;
+                        transition: all linear .3s;
                     }
                 }
             }
@@ -213,7 +231,7 @@ body.page {
             background-color: #fff;
             border: 1px solid #3b3f5321;
             width: 312px;
-            height: 480px;
+            height: 530px;
             border-radius: 20px;
             float: left;
             .item-head {
@@ -221,7 +239,7 @@ body.page {
                     border-bottom: 2px solid #FCD736;
                     padding: 20px;
                     a {
-                        color: #000;
+                        color: #5c637e;
                         font-size: 16px;
                         font-weight: 600;
                         img {
@@ -248,26 +266,37 @@ body.page {
                     text-decoration: none;
                     display: flex;
                     align-items: center;
-                    color: #151826;
+                    color: #5c637e;
                     font-size: 16px;
                     font-weight: 400;
-                    margin-bottom: 10px;
+                    margin-bottom: 22px;
                     img {
                         padding-right: 10px;
                     }
                 }
             }
             .docs-butt  {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
                 a {
                     text-decoration: none;
-                    color: #151826;
+                    color: #727BFF;
                     font-size: 18px;
                     font-weight: 600;
                     text-align: center;
                     display: block;
-                    padding-bottom: 25px;
+                    border: 1px solid #E5EDFF;
+                    border-radius: 10px;
+                    padding: 10px 25px;
+                    width: max-content;
+                    transition: all linear .3s;
+                    margin-top: 14px;
                     &:hover {
-                        color: #727BFF;
+                        color: #fff;
+                        background-color: #4353FF;
+                        transition: all linear .3s;
                     }
                 }
             }
