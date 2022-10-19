@@ -1,5 +1,9 @@
 @import "components/variables";
 
-@import "components/documentation/home";
-@import "components/documentation/archive";
-@import "components/documentation/single";
+@import "components/search-form";
+@import "components/sidebar";
+@import "components/breadcrumb";
+
+@import "components/docs";
+@import "components/archive";
+@import "components/single";

@@ -45,14 +45,10 @@ class SoftDocs_Enqueue {
 
 		wp_enqueue_style( 'soft-docs-admin', SOFT_DOCS_ASSETS . '/css/admin.css', false, SOFT_DOCS_VERSION );
 
-
-
+		wp_enqueue_media();
 		wp_enqueue_script( 'soft-docs-admin', SOFT_DOCS_ASSETS . '/js/admin.js', [
 			'jquery',
 			'wp-util',
-			'wp-element',
-			'wp-components',
-			'wp-editor',
 		], SOFT_DOCS_VERSION, true );
 
 		wp_localize_script( 'soft-docs-admin', 'softDocs', $this->get_localize_data() );

@@ -1,0 +1,95 @@
+.softdocs-single-wrap {
+  padding-top: 150px;
+}
+
+.softdocs-single-main {
+  background-color: #fff;
+  border: 1px solid #3b3f5321;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+  flex: 1;
+
+  .softdocs-entry-content {
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .softdocs-feedback {
+    padding: 15px 20px;
+    background: #F0F4FF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+
+    span {
+      font-size: 1.1rem;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    }
+  }
+
+  .softdocs-entry-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .support-link {
+      display: flex;
+      align-items: center;
+
+      svg {
+        background-color: #E5EDFF;
+        margin-right: 10px;
+        color: #4353FF;
+        border-radius: 50px;
+        padding: 7px;
+        width: 40px;
+        height: 40px;
+      }
+
+      span {
+        color: #5C637E;
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #4353FF;
+        margin-left: 10px;
+      }
+
+    }
+
+    .update-date {
+      svg {
+        background-color: #E5EDFF;
+        margin-right: 10px;
+        color: #4353FF;
+        border-radius: 50px;
+        padding: 7px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+
+}
+

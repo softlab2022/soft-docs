@@ -10,15 +10,16 @@ class SoftDocs_Shortcode {
 	protected static $instance = null;
 
 	public function __construct() {
-		add_shortcode( 'documentation', [ $this, 'render_documentation' ] );
+		add_shortcode( 'soft_docs', [ $this, 'render_docs' ] );
 		add_shortcode( 'documentation_archive', [ $this, 'render_documentation_archive' ] );
 		add_shortcode( 'documentation_single', [ $this, 'render_documentation_single' ] );
 	}
 
 
-	public function render_documentation( $atts = [], $data = null ) {
+	public function render_docs( $atts = [], $data = null ) {
+
 		ob_start();
-		include_once SOFT_DOCS_TEMPLATES . '/documentation.php';
+		include_once SOFT_DOCS_TEMPLATES . '/docs.php';
 
 		return ob_get_clean();
 	}

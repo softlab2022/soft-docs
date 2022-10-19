@@ -1,0 +1,102 @@
+.softdocs-search-wrap {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  .softdocs-search-label {
+    text-align: center;
+    margin-bottom: 10px;
+
+    label {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #5C637E;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #5C637E;
+    }
+  }
+
+  .softdocs-search-form {
+    background: #FFF;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+  }
+
+  .category-select {
+    margin-right: 20px;
+    max-width: 180px;
+    border-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #5C637E;
+    border-radius: 0;
+    border-left: 1px solid #D3D9EF;
+    padding-left: 15px;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+  }
+
+  .softdocs-search-submit {
+    border-radius: 10px;
+    background: linear-gradient(146.96deg, #7788FF 11.6%, #6E6DFF 89.24%);
+    font-weight: 500;
+    font-size: 1rem;
+    min-height: 40px;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+
+    path, circle {
+      stroke: #fff;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+  }
+
+
+  .softdocs-search-field {
+    margin-right: auto;
+    flex: 1;
+    border: none;
+    margin-left: 15px;
+
+    &:focus {
+      box-shadow: none;
+      border-color: transparent;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #979797;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+  }
+
+
+}
+

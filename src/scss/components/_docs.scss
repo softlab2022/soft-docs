@@ -1,0 +1,198 @@
+.softdocs-wrap {
+  width: 100%;
+
+  .softdocs-content-area {
+    padding: 30px 25px;
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+  }
+
+}
+
+
+body.page {
+  background: linear-gradient(180.71deg, #6C9EFF -150px, rgba(249, 250, 255, 0) 800px) no-repeat center top !important;
+}
+
+.docs-container {
+  padding-bottom: 150px;
+
+  .docs-text h1 {
+    text-align: center;
+    padding-bottom: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    color: #151826;
+  }
+
+  .form {
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 40px;
+
+    form {
+      position: relative;
+
+      input {
+        width: 900px;
+        padding: 20px 40px;
+        background: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+
+        &:focus-visible {
+          box-shadow: none;
+          outline: 0;
+        }
+      }
+
+      .form-select {
+        width: 186px;
+        position: absolute;
+        top: 14px;
+        right: 186px;
+        border-color: transparent;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #5C637E;
+        border-radius: 0;
+        text-transform: capitalize;
+        border-left: 1px solid #5c637e;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+      }
+
+      .btns {
+        position: absolute;
+        right: 29px;
+        top: 5px;
+
+        .btn-primary {
+          padding: 14px 30px;
+          border-radius: 10px;
+          background: linear-gradient(146.96deg, #7788FF 11.6%, #6E6DFF 89.24%);
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 150%;
+          color: #fff;
+
+          &:focus {
+            box-shadow: none;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .form form input::placeholder {
+    color: #979797;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  .docs-main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .docs-item {
+      background-color: #fff;
+      border: 1px solid #3b3f5321;
+      width: calc(33.33% - 40px);
+      margin: 20px;
+      border-radius: 20px;
+
+      .item-head {
+        .item-text {
+          border-bottom: 2px solid #727BFF;
+          padding: 20px;
+
+          a {
+            color: #5c637e;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            img {
+              width: 35px;
+              height: 35px;
+              margin-right: 10px;
+              border-radius: 5px;
+            }
+
+            .docs-count {
+              margin-left: auto;
+              color: #fff;
+              font-size: 14px;
+              font-weight: 500;
+              background-color: #727BFF;
+              width: 30px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+
+      .docs-products {
+        padding: 20px;
+
+        a {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          color: #5c637e;
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 22px;
+
+          img {
+            padding-right: 10px;
+          }
+        }
+      }
+
+      .docs-butt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+
+        a {
+          text-decoration: none;
+          color: #727BFF;
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center;
+          display: block;
+          border: 1px solid #E5EDFF;
+          border-radius: 10px;
+          padding: 10px 25px;
+          width: max-content;
+          transition: all linear .3s;
+
+          &:hover {
+            color: #fff;
+            background-color: #4353FF;
+            transition: all linear .3s;
+          }
+        }
+      }
+    }
+  }
+}

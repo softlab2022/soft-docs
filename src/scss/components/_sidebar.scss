@@ -1,0 +1,62 @@
+.softdocs-sidebar {
+  background-color: #fff;
+  border: 1px solid #3b3f5321;
+  border-radius: 20px;
+  flex: 0 0 30%;
+  max-width: 350px;
+
+  .sidebar-title {
+    background-color: #727BFF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px 15px;
+
+    a {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+      }
+    }
+
+    .docs-count {
+      color: #727BFF;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: #fff;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      border-radius: 50px;
+      margin-left: auto;
+    }
+  }
+
+  .docs-list {
+    padding: 15px;
+
+    &-item {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: #5C637E;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 10px;
+
+      img {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

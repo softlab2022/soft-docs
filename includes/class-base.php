@@ -59,6 +59,9 @@ final class SoftDocs {
 		//core includes
 		include_once SOFT_DOCS_INCLUDES . '/class-shortcode.php';
 		include_once SOFT_DOCS_INCLUDES . '/class-enqueue.php';
+		include_once SOFT_DOCS_INCLUDES . '/class-cpt.php';
+		include_once SOFT_DOCS_INCLUDES . '/class-hooks.php';
+		include_once SOFT_DOCS_INCLUDES . '/functions.php';
 
 
 	}
