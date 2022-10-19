@@ -10,12 +10,30 @@ class Soft_Docs_Hooks {
 		//add_filter( 'the_title', [ $this, 'docs_title' ], 10, 2 );
 
 		add_filter( 'single_template', [ $this, 'docs_single' ] );
+		add_filter( 'page_template', [ $this, 'docs_page' ] );
+		add_filter( 'archive_template', [ $this, 'docs_archive' ] );
+	}
+
+	public function docs_archive( $template ) {
+		if ( is_tax( 'docs_category' ) ) {
+			$template = SOFT_DOCS_TEMPLATES . '/archive.php';
+		}
+
+		return $template;
+	}
+
+	public function docs_page( $page_template ) {
+
+		if ( is_page( 'docs' ) ) {
+			$page_template = SOFT_DOCS_TEMPLATES . '/docs.php';
+		}
+
+		return $page_template;
 	}
 
 	public function docs_single( $single_template ) {
-		global $post;
 
-		if ( $post->post_type == 'docs' ) {
+		if ( get_post_type() == 'docs' ) {
 			$single_template = SOFT_DOCS_TEMPLATES . '/single.php';
 		}
 
