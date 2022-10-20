@@ -30,6 +30,8 @@ $image_id    = get_term_meta( $term_id, 'category-image-id', true );
 		$args = array(
 			'post_type'      => 'docs',
 			'posts_per_page' => - 1,
+			'orderby'        => 'menu_order',
+			'order'          => 'ASC',
 			'tax_query'      => array(
 				array(
 					'taxonomy' => 'docs_category',
