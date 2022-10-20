@@ -119,5 +119,32 @@
 
     }
   }
-
+  @media(max-width: 767.98px) {
+    .softdocs-archive-main {
+      flex-direction: column;
+      .softdocs-cat {
+        width: 90%;
+      }
+    }
+  }
+  @media(max-width: 991.98px) {
+    .softdocs-archive-main {
+      .softdocs-cat {
+        &-title {
+          padding: 11px;
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+      
+    }
+    .docs-list {
+  
+      &-item {
+        font-size: 13px;
+  
+      }
+    }
+  }
 }

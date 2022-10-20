@@ -203,6 +203,27 @@
       color: #5C637E;
     }
   }
-
+  @media(max-width: 767.98px) {
+    .softdocs-search-form {
+      padding: 6px 3px;
+    }
+    .softdocs-search-field {
+      margin-left: 4px;
+  }
+  .softdocs-category-select {
+    max-width: 100px;
+    margin-right: 7px;
+    font-size: 0.750rem;
+    padding-left: 0px;
+  }
+  .softdocs-search-submit {
+    padding: 7px 8px;
+    font-size: .8rem;
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  }
 }
 
