@@ -29,9 +29,11 @@
     max-width: 800px;
     display: flex;
     align-items: center;
+    position: relative;
   }
 
-  .category-select {
+
+  .softdocs-category-select {
     margin-right: 20px;
     max-width: 180px;
     border-color: transparent;
@@ -43,8 +45,11 @@
     border-left: 1px solid #D3D9EF;
     padding-left: 15px;
 
-    &:focus {
+    &:focus,
+    &:focus-visible {
       box-shadow: none;
+      outline: none;
+      border: none;
     }
 
   }
@@ -77,12 +82,37 @@
     }
   }
 
-
   .softdocs-search-field {
+    border: none;
     margin-right: auto;
     flex: 1;
-    border: none;
-    margin-left: 15px;
+
+    &-wrap {
+      margin-right: auto;
+      flex: 1;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+
+      .softdocs-search-close {
+        margin-right: 10px;
+        cursor: pointer;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+
+      .softdocs-search-loader {
+        margin-right: 10px;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+    }
 
     &:focus {
       box-shadow: none;
@@ -95,8 +125,84 @@
       font-weight: 400;
       font-size: 1rem;
     }
+
+
   }
 
+  .softdocs-search-results {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border: 1px solid #f1f1f1;
+    min-width: 300px;
+    position: absolute;
+    top: auto;
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    &-wrap {
+      position: absolute;
+      z-index: 9999;
+      width: 100%;
+      left: 0;
+      bottom: 2px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 100px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #FFF;
+        z-index: 9999;
+      }
+
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+  }
+
+  .softdocs-search-item {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    .softdocs-search-item-title {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333333;
+      margin-bottom: 0;
+    }
+
+    .softdocs-search-item-category {
+      font-weight: 400;
+      font-size: .875rem;
+      line-height: 150%;
+      color: #5C637E;
+    }
+  }
 
 }
 

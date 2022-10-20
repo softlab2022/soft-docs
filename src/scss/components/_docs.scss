@@ -95,22 +95,29 @@
     }
   }
 
-}
+  .docs-list {
+    padding: 15px;
 
+    &-item {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: #5C637E;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 10px;
 
-body.page {
-  background: linear-gradient(180.71deg, #6C9EFF -150px, rgba(249, 250, 255, 0) 800px) no-repeat center top !important;
-}
+      img {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+      }
 
-.docs-container {
-  padding-bottom: 150px;
+      &:hover {
+        color: #4353FF;
+      }
 
-
-  .docs-main {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-
+    }
   }
+
 }
