@@ -47,7 +47,7 @@ get_header();
                     <div class="softdocs-cat">
 
                         <div class="softdocs-cat-title">
-                            <a href="<?php echo $slug; ?>">
+                            <a href="<?php echo $term_link; ?>">
 								<?php
 								if ( $image_id ) {
 									echo wp_get_attachment_image( $image_id );
