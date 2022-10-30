@@ -22,6 +22,7 @@ $category = get_queried_object();
 
             <div class="docs-list">
 		        <?php
+
 		        $args = array(
 			        'post_type'      => 'docs',
 			        'posts_per_page' => - 1,
@@ -32,6 +33,8 @@ $category = get_queried_object();
 					        'terms'    => $category->slug,
 				        ),
 			        ),
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC',
 		        );
 
 		        $query = new WP_Query( $args );

@@ -1,4 +1,5 @@
 <?php
+
 $args = array(
 	'taxonomy'   => 'docs_category',
 	'hide_empty' => false,
