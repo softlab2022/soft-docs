@@ -6,7 +6,7 @@
   margin: 0 auto;
   align-items: flex-start;
   @media(max-width: 767.98px) {
-      flex-direction: column;
+      display: block;
     
   }
 }
