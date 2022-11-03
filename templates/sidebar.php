@@ -8,6 +8,7 @@ $term_id     = $category->term_id;
 $term_link   = get_term_link( $category );
 $image_id    = get_term_meta( $term_id, 'category-image-id', true );
 
+$current_post_id = get_the_ID();
 
 ?>
 
@@ -50,8 +51,12 @@ $image_id    = get_term_meta( $term_id, 'category-image-id', true );
 				$title   = get_the_title();
 				$link    = get_the_permalink();
 				$image   = get_the_post_thumbnail_url( $post_id, 'full' );
+
+				$active = $current_post_id == $post_id ? 'active' : '';
+
 				?>
-                <a href="<?php echo $link; ?>" class="docs-list-item">
+                <a href="<?php echo $link; ?>"
+                   class="docs-list-item <?php echo $active; ?>">
                     <img class="doc-icon" src="<?php echo SOFT_DOCS_ASSETS; ?>/images/doc-icon.png" alt="doc">
                     <span class="doc-title"><?php echo $title; ?></span>
                 </a>

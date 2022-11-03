@@ -106,6 +106,7 @@
       font-size: 16px;
       font-weight: 400;
       margin-bottom: 10px;
+      line-height: 1.5;
 
       img {
         margin-right: 10px;
@@ -113,15 +114,18 @@
         height: 30px;
       }
 
-      &:hover {
+      &:hover, &.active {
         color: #4353FF;
       }
 
+
     }
   }
+
   @media(max-width: 767.98px) {
     .softdocs-archive-main {
       flex-direction: column;
+
       .softdocs-cat {
         width: 90%;
       }
@@ -132,18 +136,19 @@
       .softdocs-cat {
         &-title {
           padding: 11px;
+
           a {
             font-size: 14px;
           }
         }
       }
-      
+
     }
     .docs-list {
-  
+
       &-item {
         font-size: 13px;
-  
+
       }
     }
   }
