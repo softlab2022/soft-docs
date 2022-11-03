@@ -12,7 +12,7 @@
 
 // don't call the file directly
 if ( ! defined( 'ABSPATH' ) ) {
-	wp_die( __( 'You can\'t access this page', 'reader-mode' ) );
+	wp_die( __( 'You can\'t access this page', 'soft-docs' ) );
 }
 
 /** define constants */
