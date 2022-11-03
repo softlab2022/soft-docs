@@ -39,6 +39,9 @@
       margin-left: auto;
     }
   }
+  @media(max-width: 767.98px) {
+    max-width: 100%;
+  }
   @media(max-width: 991.98px) {
     .sidebar-title {
       padding: 10px 8px;
