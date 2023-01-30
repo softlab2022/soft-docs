@@ -6,8 +6,7 @@
   margin: 0 auto;
   align-items: flex-start;
   @media(max-width: 767.98px) {
-      display: block;
-    
+    display: block;
   }
 }
 
@@ -19,11 +18,32 @@
   border-radius: 20px;
   flex: 1;
 
+  .softdocs-entry-header {
+    .softdocs-entry-title {
+      color: #5C637E;
+    }
+  }
+
   .softdocs-entry-content {
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 20px;
+      box-shadow: 0px 3px 8px rgba(170, 170, 170, 0.2);
+    }
+    .ratio {
+      iframe {
+        border-radius: 20px;
+        box-shadow: 0px 3px 8px rgba(170, 170, 170, 0.2);
+      }
+    }
+    h3 {
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
+    p {
+      padding-bottom: 30px;
+      margin-bottom: 0;
     }
   }
 
@@ -121,7 +141,7 @@
       margin-top: 15px;
     }
   }
-}
+  }
   @media(max-width: 991.98px) {
 
    .softdocs-entry-title {
@@ -143,7 +163,7 @@
       margin-top: 15px;
     }
   }
-}
+  }
 
 }
 
