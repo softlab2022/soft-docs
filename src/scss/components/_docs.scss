@@ -122,10 +122,18 @@
     }
   }
 
+  @media(min-width: 1200px) {
+    .softdocs-archive-main {
+      .softdocs-cat {
+        width: 21%;
+      }
+    }
+  }
  
+
   @media(max-width: 768px) {
     .softdocs-archive-main {
-      flex-direction: row;
+      
 
       .softdocs-cat {
         width: 43%;
@@ -134,7 +142,7 @@
   }
   @media(max-width: 600px) {
     .softdocs-archive-main {
-      flex-direction: column;
+      
 
       .softdocs-cat {
         width: 90%;
@@ -143,6 +151,7 @@
   }
   @media(max-width: 991.98px) {
     .softdocs-archive-main {
+      
       .softdocs-cat {
         
         &-title {
