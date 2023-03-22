@@ -8,9 +8,11 @@
   .softdocs-search-label {
     text-align: center;
     margin-bottom: 10px;
+    margin-top:150px;
+    line-height: 56px;
 
     label {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 600;
       color: #333;
     }
@@ -30,6 +32,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    border:1px solid transparent;
   }
 
 
@@ -204,8 +207,18 @@
     }
   }
   @media(max-width: 767.98px) {
+    .softdocs-search-label{
+      margin-top:120px;
+      margin-bottom: 0;
+      label{
+        font-size:2.5rem;
+      }
+    }
     .softdocs-search-form {
-      padding: 6px 3px;
+      padding: 6px 10px;
+      margin: 0 13px;
+      width: 96%;
+      border: 1px solid #ddd;
     }
     .softdocs-search-field {
       margin-left: 4px;

@@ -16,26 +16,31 @@
       line-height: 1.7;
 
       a {
-        color: #727BFF;
+        color: #727bff;
         text-decoration: none;
-        font-size: .875rem;
+        font-size: 18px;
         display: flex;
         align-items: center;
       }
 
       &:not(:last-child):after {
-        content: '/';
+        content: "/";
         margin: 0 10px;
         color: #5c637e;
       }
 
       &:last-child {
+        overflow: hidden;
+        flex: 1;
+
         a {
           color: #5c637e;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
         }
       }
-
     }
-
   }
 }
