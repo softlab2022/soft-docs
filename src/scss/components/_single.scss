@@ -56,13 +56,25 @@
         }
       }
     }
+    ul{
+      li{
+        //margin-bottom: 3px !important;
+        color:#5c637e;
+        font-size: 18px;
+        line-height: var(--bs-body-line-height);
+      }
+
+    }
+   
     p {
      font-size:18px;
+     margin-bottom: 3px !important;
     }
     h2{
       margin-top:20px;
       margin-bottom: 10px;
     }
+   
   }
 
   .softdocs-feedback {
