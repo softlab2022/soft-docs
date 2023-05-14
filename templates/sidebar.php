@@ -31,7 +31,10 @@ $current_post_id = get_the_ID();
 		$args = array(
 			'post_type'      => 'docs',
 			'posts_per_page' => - 1,
-			'orderby'        => 'menu_order',
+            'orderby'        => array(
+                'date'       => 'DESC',
+                'menu_order' => 'ASC',
+            ),
 			'order'          => 'ASC',
 			'tax_query'      => array(
 				array(

@@ -28,7 +28,10 @@ get_header();
 				$args = array(
 					'post_type'      => 'docs',
 					'posts_per_page' => 10,
-					'orderby'        => 'menu_order',
+					'orderby'        => array(
+						'date'       => 'DESC',
+						'menu_order' => 'ASC',
+					),
 					'order'          => 'ASC',
 					'tax_query'      => array(
 						array(
