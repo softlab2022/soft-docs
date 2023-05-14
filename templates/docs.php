@@ -29,8 +29,8 @@ get_header();
 					'post_type'      => 'docs',
 					'posts_per_page' => 10,
 					'orderby'        => array(
-						'date'       => 'DESC',
 						'menu_order' => 'ASC',
+						'date'       => 'ASC',
 					),
 					'order'          => 'ASC',
 					'tax_query'      => array(

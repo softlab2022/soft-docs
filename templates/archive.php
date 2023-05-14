@@ -34,8 +34,8 @@ $category = get_queried_object();
 						),
 					),
 					'orderby'        => array(
-						'date'       => 'DESC',
 						'menu_order' => 'ASC',
+						'date'       => 'ASC',
 					),
 					'order'          => 'ASC',
 				);
