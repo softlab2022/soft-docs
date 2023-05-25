@@ -4,7 +4,26 @@ global $post;
 
 
 $home_url  = get_home_url();
-$docs_page = get_page_by_title( 'Docs' );
+
+$title = 'Docs';
+$args = array(
+    'post_type' => 'page',
+    'post_status' => 'publish',
+    'title' => $title,
+    'posts_per_page' => 1,
+);
+
+$query = new WP_Query($args);
+
+if ($query->have_posts()) {
+    while ($query->have_posts()) {
+        $query->the_post();
+        $docs_page = get_post(get_the_ID());
+    }
+    wp_reset_postdata();
+} else {
+    $docs_page = null;
+}
 
 ?>
 
