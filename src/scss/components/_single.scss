@@ -37,6 +37,7 @@
       border: 1px solid #ede8e8;
       //border-radius: 20px;
       //box-shadow: 0px 3px 8px rgba(170, 170, 170, 0.2);
+      margin-top: 30px;
     }
     .ratio {
       margin-top:20px;
@@ -61,6 +62,9 @@
         color:#5c637e;
         font-size: 18px;
         line-height: var(--bs-body-line-height);
+        strong {
+          color: #000;
+        }
       }
 
     }
