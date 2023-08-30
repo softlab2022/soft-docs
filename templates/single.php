@@ -41,7 +41,7 @@ $support_link = '/contact-us/';
             </article>
 
 
-            <div class="softdocs-feedback">
+            <!-- <div class="softdocs-feedback">
                 <span class="feedback-title">Was this article helpful to you?</span>
                 <div class="feedback-btns">
                     <button type="button" class="feedback-btn feedback-btn-yes">
@@ -75,7 +75,7 @@ $support_link = '/contact-us/';
                         </svg>
                     </button>
                 </div>
-            </div>
+            </div> -->
 
             <div class="softdocs-entry-footer">
                 <div class="support-link">
