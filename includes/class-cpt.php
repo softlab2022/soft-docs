@@ -13,6 +13,12 @@ class SoftDocs_CPT {
 		add_action( 'docs_category_edit_form_fields', [ $this, 'edit_category_image' ], 10, 2 );
 		add_action( 'created_docs_category', [ $this, 'save_category_image' ], 10, 2 );
 		add_action( 'edited_docs_category', [ $this, 'updated_category_image' ], 10, 2 );
+		
+		//add category order
+		add_action( 'docs_category_add_form_fields', [ $this, 'soft_docs_add_category_order' ], 10 );
+		add_action( 'docs_category_edit_form_fields', [ $this, 'soft_docs_edit_category_order' ], 10, 2 );
+		add_action( 'created_docs_category', [ $this, 'soft_docs_save_category_order' ], 10, 2 );
+		add_action( 'edited_docs_category', [ $this, 'soft_docs_update_category_order' ], 10, 2 );
 
 		//add category column in admin
 		add_filter( 'manage_edit-docs_category_columns', [ $this, 'add_category_column' ] );
@@ -139,6 +145,54 @@ class SoftDocs_CPT {
 			update_term_meta( $term_id, 'category-image-id', $image );
 		} else {
 			update_term_meta( $term_id, 'category-image-id', '' );
+		}
+	}
+
+	//add category order
+	public function soft_docs_add_category_order( $taxonomy ){?>
+		<div class="form-field term-group">
+			<tr class="form-field">
+				<th scope="row" valign="top">
+					<label for="order"><?php echo esc_html__('Order', 'soft-docs'); ?></label>
+				</th>
+				<td>
+					<input type="number" name="order" id="order" value="" placeholder="<?php echo esc_attr__('Enter your order number', 'soft-docs'); ?>" />
+					<p class="description"><?php echo esc_html__('Enter the order for this category.', 'soft-docs'); ?></p>
+				</td>
+			</tr>
+		</div>
+	<?php }	
+	
+	// edit category order
+	public function soft_docs_edit_category_order( $taxonomy ){
+		$order = get_term_meta($taxonomy->term_id, 'order', true);
+		?>
+		<div class="form-field term-group">
+			<tr class="form-field">
+				<th scope="row" valign="top">
+					<label for="order"><?php echo esc_html__('Order', 'soft-docs'); ?></label>
+				</th>
+				<td>
+					<input type="number" name="order" id="order" value="<?php echo esc_attr($order); ?>" placeholder="<?php echo esc_attr__('Enter your order number', 'soft-docs'); ?>" />
+					<p class="description"><?php echo esc_html__('Enter the order for this category.', 'soft-docs'); ?></p>
+				</td>
+			</tr>
+		</div>
+	<?php }
+
+	// save category order
+	public function soft_docs_save_category_order( $term_id ){
+		if (isset($_POST['order'])) {
+			update_term_meta($term_id, 'order', sanitize_text_field($_POST['order']));
+		}
+	}
+
+	// update category order
+	public function soft_docs_update_category_order( $term_id ) {
+		if (isset($_POST['order'])) {
+			update_term_meta($term_id, 'order', sanitize_text_field($_POST['order']));
+		} else {
+			delete_term_meta($term_id, 'order');
 		}
 	}
 
