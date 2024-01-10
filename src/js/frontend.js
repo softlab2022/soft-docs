@@ -11,9 +11,14 @@
                 }, 700);
             });
 
+            if($('.single-docs').length > 0 ){
+                app.openAccordion();
+            }
+
             $('.softdocs-search-form').on('submit', app.handleSearch);
             $('.softdocs-search-close').on('click', app.handleSearchClose);
             $('.softdocs-category-select').on('change', app.handleSearch);
+            $('.docs-section-title').on('click', app.handleAccordion);
         },
 
         handleSearch: function (e) {
@@ -53,6 +58,24 @@
             $('.softdocs-search-results').html('');
             $('.softdocs-search-field').val('');
             $('.softdocs-search-close').removeClass('active');
+        },
+
+        handleAccordion: function() {
+            $(this).toggleClass("is-open");
+
+            var content = $(this).next();
+
+            if (content.css("max-height") !== "0px") {
+                content.css("max-height", "0");
+            } else {
+                content.css("max-height", content[0].scrollHeight + "px");
+            }
+        },
+
+        openAccordion: function() {
+            var content = $('.active').parent();
+            content.prev().addClass('is-open');
+            content.css('max-height', content[0].scrollHeight + 'px');
         }
     }
 

@@ -78,10 +78,16 @@ if ($query->have_posts()) {
 			}
 
 			if ( $cat_terms ) {
-				$term_link = get_term_link( $cat_terms[0]->term_id );
-				$term_name = $cat_terms[0]->name;
+				// parent terms
+				$parent_terms = array_filter($cat_terms, function ($terms) {
+					return $terms->parent == 0;
+				});
+				$parent_terms = reset( $parent_terms );
 
-				echo '<li class="softdocs-breadcrumb-item"><a class="breadcrumb-item-link bread-home" href="' . esc_url( $term_link ) . '" title="' . $term_name . '">' . $term_name . '</a></li>';
+				$term_link = get_term_link( $parent_terms->term_id );
+				$term_name = $parent_terms->name;
+
+				echo '<li class="softdocs-breadcrumb-item"><a class="breadcrumb-item-link bread-home" href="' . esc_url( $term_link ) . '" title="' . $term_name . '">' . esc_html($term_name) . '</a></li>';
 			}
 
 			// title

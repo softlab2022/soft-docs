@@ -5,9 +5,14 @@ get_header();
 
 //get current post docs_category
 $terms    = get_the_terms( $post->ID, 'docs_category' );
-$category = $terms[0];
 
-$support_link = '/contact-us/';
+$category = array_filter($terms, function ($cat) {
+    return $cat->parent == 0;
+});
+
+$category = reset( $category );
+
+$support_link = '/support/';
 
 ?>
 

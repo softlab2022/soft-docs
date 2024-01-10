@@ -3,6 +3,7 @@
 $args = array(
 	'taxonomy'   => 'docs_category',
 	'hide_empty' => false,
+    'parent'     => 0
 );
 
 $categories = get_categories( $args );

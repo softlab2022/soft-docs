@@ -47,7 +47,10 @@ $current_post_id = get_the_ID();
 
 		$query = new WP_Query( $args );
 
+		$displayed_child_categories = array();
+
 		if ( $query->have_posts() ) {
+			$current_section = '';
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$post_id = get_the_ID();
@@ -57,6 +60,26 @@ $current_post_id = get_the_ID();
 
 				$active = $current_post_id == $post_id ? 'active' : '';
 
+				$parent_cat = get_the_terms($post_id, 'docs_category');
+
+				$child_cats = array_filter($parent_cat, function ($cat) {
+					return $cat->parent != 0;
+				});
+
+				foreach ($child_cats as $child_cat) {
+					$child_term_id = $child_cat->term_id;
+					$child_term_name = $child_cat->name;
+		
+					if ($current_section !== $child_term_name) {
+						if (!empty($current_section)) {
+							echo '</div></div>';
+						}
+						echo '<div class="docs-section">';
+						echo '<div class="docs-section-title">' . esc_html($child_term_name) . '<span class="docs-caret"></span></div>';
+						echo '<div class="docs-section-content">';
+						$current_section = $child_term_name;
+					}
+				}
 				?>
                 <a href="<?php echo $link; ?>"
                    class="docs-list-item <?php echo $active; ?>">

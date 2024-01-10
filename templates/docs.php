@@ -13,6 +13,7 @@ get_header();
 
 		$categories = get_terms( 'docs_category', array(
 			'hide_empty' => false,
+			'parent'   => 0
 		) );
 
 		if ( ! empty( $categories ) ) {

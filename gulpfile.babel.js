@@ -180,7 +180,7 @@ export const js = () => {
 
 export const serve = done => {
     server.init({
-        proxy: `softlab.local`
+        proxy: `softlab.test`
     });
 
     done();
