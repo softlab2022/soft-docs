@@ -13,7 +13,10 @@ get_header();
 
 		$categories = get_terms( 'docs_category', array(
 			'hide_empty' => false,
-			'parent'   => 0
+			'parent'   => 0,
+			'meta_key' 	=> 'order',
+			'orderby' 	=> 'meta_value_num',
+			'order'		=> 'ASC'
 		) );
 
 		if ( ! empty( $categories ) ) {
