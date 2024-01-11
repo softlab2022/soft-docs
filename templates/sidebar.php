@@ -7,7 +7,7 @@ $description = $category->description;
 $term_id     = $category->term_id;
 $term_link   = get_term_link( $category );
 $image_id    = get_term_meta( $term_id, 'category-image-id', true );
-
+$taxonomy 	 = $category->taxonomy;
 $current_post_id = get_the_ID();
 
 ?>
@@ -26,72 +26,63 @@ $current_post_id = get_the_ID();
         </a>
     </div>
 
-    <div class="docs-list">
-		<?php
-		$args = array(
-			'post_type'      => 'docs',
-			'posts_per_page' => - 1,
-            'orderby'        => array(
-                'menu_order' => 'ASC',
-                'date'       => 'ASC',
-            ),
-			'order'          => 'ASC',
-			'tax_query'      => array(
-				array(
-					'taxonomy' => 'docs_category',
-					'field'    => 'slug',
-					'terms'    => $slug,
-				),
-			),
-		);
+	<div class="docs-list">
+		<?php 
+			$child_terms = get_terms(array(
+				'taxonomy' 	=> $taxonomy,
+				'parent' 	=> $term_id,
+				'meta_key' 	=> 'order',
+				'orderby' 	=> 'meta_value_num',
+				'order'		=> 'ASC'
+			));
 
-		$query = new WP_Query( $args );
-
-		$displayed_child_categories = array();
-
-		if ( $query->have_posts() ) {
-			$current_section = '';
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$post_id = get_the_ID();
-				$title   = get_the_title();
-				$link    = get_the_permalink();
-				$image   = get_the_post_thumbnail_url( $post_id, 'full' );
-
-				$active = $current_post_id == $post_id ? 'active' : '';
-
-				$parent_cat = get_the_terms($post_id, 'docs_category');
-
-				$child_cats = array_filter($parent_cat, function ($cat) {
-					return $cat->parent != 0;
-				});
-
-				foreach ($child_cats as $child_cat) {
-					$child_term_id = $child_cat->term_id;
-					$child_term_name = $child_cat->name;
-		
-					if ($current_section !== $child_term_name) {
-						if (!empty($current_section)) {
-							echo '</div></div>';
-						}
-						echo '<div class="docs-section">';
-						echo '<div class="docs-section-title">' . esc_html($child_term_name) . '<span class="docs-caret"></span></div>';
-						echo '<div class="docs-section-content">';
-						$current_section = $child_term_name;
-					}
-				}
+			foreach ($child_terms as $child_term) {
 				?>
-                <a href="<?php echo $link; ?>"
-                   class="docs-list-item <?php echo $active; ?>">
-                    <img class="doc-icon" src="<?php echo SOFT_DOCS_ASSETS; ?>/images/doc-icon.png" alt="doc">
-                    <span class="doc-title"><?php echo $title; ?></span>
-                </a>
+				<div class="docs-section">
+					<div class="docs-section-title">
+						<?php echo esc_html__($child_term->name, 'soft-docs'); ?> <span class="docs-caret"></span>
+					</div>
+					<div class="docs-section-content">
+						<?php
+							$args = array(
+								'post_type' => 'docs',
+								'tax_query' => array(
+									array(
+										'taxonomy' 	=> $taxonomy,
+										'field' 	=> 'id',
+										'terms' 	=> $child_term->term_id,
+									),
+								),
+							);
+						
+							$query = new WP_Query($args);
+						
+							// Loop through the query results
+							if ($query->have_posts()) {
+								while ($query->have_posts()) {
+									$query->the_post();
+									$post_id = get_the_ID();
+									$title   = get_the_title();
+									$link    = get_the_permalink();
+									$image   = get_the_post_thumbnail_url( $post_id, 'full' );
+					
+									$active = $current_post_id == $post_id ? 'active' : '';
+									?>
+									<a href="<?php echo $link; ?>"
+									class="docs-list-item <?php echo esc_attr( $active ); ?>">
+									 <img class="doc-icon" src="<?php echo SOFT_DOCS_ASSETS; ?>/images/doc-icon.png" alt="doc">
+									 <span class="doc-title"><?php echo esc_html__($title, 'soft-docs'); ?></span>
+								 </a>
+								<?php
+								}
+								// Reset post data
+								wp_reset_postdata();
+							}
+						?>
+					</div>
+				</div>
 				<?php
 			}
-
-			wp_reset_postdata();
-		}
-
 		?>
-    </div>
+	</div>
 </aside>
