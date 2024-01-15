@@ -36,23 +36,80 @@ $current_post_id = get_the_ID();
 				'order'		=> 'ASC'
 			));
 
-			foreach ($child_terms as $child_term) {
-				?>
-				<div class="docs-section">
-					<div class="docs-section-title">
-						<?php echo esc_html__($child_term->name, 'soft-docs'); ?> <span class="docs-caret"></span>
+			// check has child terms
+			if( count($child_terms) > 0){
+				foreach ($child_terms as $child_term) {
+					?>
+					<div class="docs-section">
+						<div class="docs-section-title">
+							<?php echo esc_html__($child_term->name, 'soft-docs'); ?> <span class="docs-caret"></span>
+						</div>
+						<div class="docs-section-content">
+							<?php
+								$args = array(
+									'post_type' => 'docs',
+									'tax_query' => array(
+										array(
+											'taxonomy' 	=> $taxonomy,
+											'field' 	=> 'id',
+											'terms' 	=> $child_term->term_id,
+										),
+									),
+									'orderby'        => array(
+										'menu_order' => 'ASC',
+										'date'       => 'ASC',
+									),
+									'order'          => 'ASC',
+									'posts_per_page' => -1
+								);
+							
+								$query = new WP_Query($args);
+							
+								// Loop through the query results
+								if ($query->have_posts()) {
+									while ($query->have_posts()) {
+										$query->the_post();
+										$post_id = get_the_ID();
+										$title   = get_the_title();
+										$link    = get_the_permalink();
+										$image   = get_the_post_thumbnail_url( $post_id, 'full' );
+						
+										$active = $current_post_id == $post_id ? 'active' : '';
+										?>
+										<a href="<?php echo $link; ?>"
+										class="docs-list-item <?php echo esc_attr( $active ); ?>">
+										 <img class="doc-icon" src="<?php echo SOFT_DOCS_ASSETS; ?>/images/doc-icon.png" alt="doc">
+										 <span class="doc-title"><?php echo esc_html__($title, 'soft-docs'); ?></span>
+									 </a>
+									<?php
+									}
+									// Reset post data
+									wp_reset_postdata();
+								}
+							?>
+						</div>
 					</div>
-					<div class="docs-section-content">
+					<?php
+				}
+			}else{ ?>
+				<div class="docs-section">
+					<div class="docs-section-content-alt">
 						<?php
 							$args = array(
 								'post_type' => 'docs',
-								'tax_query' => array(
+								'tax_query'      => array(
 									array(
-										'taxonomy' 	=> $taxonomy,
-										'field' 	=> 'id',
-										'terms' 	=> $child_term->term_id,
+										'taxonomy' => $taxonomy,
+										'field'    => 'slug',
+										'terms'    => $category->slug,
 									),
 								),
+								'orderby'        => array(
+									'menu_order' => 'ASC',
+									'date'       => 'ASC',
+								),
+								'order'          => 'ASC',
+								'posts_per_page' => -1	
 							);
 						
 							$query = new WP_Query($args);
@@ -70,9 +127,9 @@ $current_post_id = get_the_ID();
 									?>
 									<a href="<?php echo $link; ?>"
 									class="docs-list-item <?php echo esc_attr( $active ); ?>">
-									 <img class="doc-icon" src="<?php echo SOFT_DOCS_ASSETS; ?>/images/doc-icon.png" alt="doc">
-									 <span class="doc-title"><?php echo esc_html__($title, 'soft-docs'); ?></span>
-								 </a>
+										<img class="doc-icon" src="<?php echo SOFT_DOCS_ASSETS; ?>/images/doc-icon.png" alt="doc">
+										<span class="doc-title"><?php echo esc_html__($title, 'soft-docs'); ?></span>
+									</a>
 								<?php
 								}
 								// Reset post data
@@ -81,7 +138,7 @@ $current_post_id = get_the_ID();
 						?>
 					</div>
 				</div>
-				<?php
+			<?php
 			}
 		?>
 	</div>
