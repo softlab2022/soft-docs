@@ -3,7 +3,7 @@
  * Plugin Name:  Soft Docs
  * Plugin URI:  https://softlabbd.com/soft-docs/
  * Description: Documentation & Knowledge Base Plugin
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      SoftLab
  * Author URI:  https://softlabbd.com/
  * Text Domain: soft-docs
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /** define constants */
-define( 'SOFT_DOCS_VERSION', '1.0.1' );
+define( 'SOFT_DOCS_VERSION', '1.0.2' );
 define( 'SOFT_DOCS_FILE', __FILE__ );
 define( 'SOFT_DOCS_PATH', dirname( SOFT_DOCS_FILE ) );
 define( 'SOFT_DOCS_INCLUDES', SOFT_DOCS_PATH . '/includes' );
