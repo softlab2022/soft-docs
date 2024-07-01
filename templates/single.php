@@ -93,8 +93,9 @@ $support_link = '/support/';
                     </svg>
 
                     <span>Still Stuck?</span>
-                    <a href="<?php echo $support_link; ?>">Contact us for support.</a>
+                    <a href="<?php echo $support_link; ?>">Contact us for support</a>
                 </div>
+                
 
                 <div class="update-date">
                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">

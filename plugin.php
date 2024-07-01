@@ -3,7 +3,7 @@
  * Plugin Name:  Soft Docs
  * Plugin URI:  https://softlabbd.com/soft-docs/
  * Description: Documentation & Knowledge Base Plugin
- * Version:     1.0.2
+ * Version:     1.0.0
  * Author:      SoftLab
  * Author URI:  https://softlabbd.com/
  * Text Domain: soft-docs
