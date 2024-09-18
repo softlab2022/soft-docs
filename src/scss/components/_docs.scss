@@ -136,7 +136,7 @@
   @media(max-width: 767.98px) {
     .softdocs-archive-main {
       justify-content: center;
-
+      padding: 10px 0;
       .softdocs-cat {
         width: 43%;
       }
@@ -149,6 +149,7 @@
 
       .softdocs-cat {
         width: 90%;
+        margin: 8px;
       }
     }
   }
