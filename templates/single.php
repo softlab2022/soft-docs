@@ -2,13 +2,12 @@
 
 get_header();
 
-
 //get current post docs_category
-$terms    = get_the_terms( $post->ID, 'docs_category' );
+$terms = array_filter((array) get_the_terms( $post->ID, 'docs_category' ));
 
-$category = array_filter($terms, function ($cat) {
-    return $cat->parent == 0;
-});
+$category = array_filter( $terms, function ( $cat ) {
+	return $cat->parent == 0;
+} );
 
 $category = reset( $category );
 
@@ -18,11 +17,17 @@ $support_link = '/support/';
 
 <div class="softdocs-wrap softdocs-single-wrap">
 
-	<?php softdocs_get_template('search-form'); ?>
+	<?php softdocs_get_template( 'search-form' ); ?>
 
     <div class="softdocs-content-area">
 
-		<?php softdocs_get_template( 'sidebar', [ 'category' => $category ] ); ?>
+		<?php
+
+		if ( ! empty( $category ) ) {
+			softdocs_get_template( 'sidebar', [ 'category' => $category ] );
+		}
+
+		?>
 
         <main id="softdocs-signle-main" <?php post_class( 'softdocs-single-main' ); ?>>
 
@@ -95,7 +100,7 @@ $support_link = '/support/';
                     <span>Still Stuck?</span>
                     <a href="<?php echo $support_link; ?>">Contact us for support</a>
                 </div>
-                
+
 
                 <div class="update-date">
                     <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
