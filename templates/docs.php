@@ -22,7 +22,7 @@ get_header();
 		if (!empty($categories)) {
 			$category_count = 0;
 			foreach ($categories as $category) {
-				if ($category_count >= 3) break;
+				if ($category_count >= 4) break;
 				$name        = $category->name;
 				$slug        = $category->slug;
 				$count       = $category->count;
